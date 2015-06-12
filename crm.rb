@@ -87,7 +87,8 @@ class CRM
 
   def display_contacts
     @rolodex.all.each do |contact|
-      puts "#{contact.first_name} #{contact.last_name}"
+      contact.display_all_values_compact
+      # puts "#{contact.first_name} #{contact.last_name}"
     end
   end
 end

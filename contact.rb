@@ -19,4 +19,8 @@ class Contact
     puts "Notes: #{@notes}"
     puts "\n********************\n"
   end
+
+  def display_all_values_compact
+    puts "#{id}: #{first_name} #{last_name}, #{@email}, #{@notes}"
+  end
 end
