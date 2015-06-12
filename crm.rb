@@ -48,7 +48,7 @@ class CRM
 
       print "Select an option:"
       input = gets.chomp.to_i
-
+      puts "\n********************\n"
       # return if input == 6
 
       choose_option(input)

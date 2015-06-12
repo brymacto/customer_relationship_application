@@ -11,10 +11,12 @@ class Contact
   end
 
   def display_all_values
+    puts "\n********************\n"
     puts "ID: #{@id}"
     puts "First Name: #{@first_name}"
     puts "Last Name: #{@last_name}"
     puts "Email: #{@email}"
     puts "Notes: #{@notes}"
+    puts "\n********************\n"
   end
 end
