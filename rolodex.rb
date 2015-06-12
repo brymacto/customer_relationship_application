@@ -13,6 +13,48 @@ class Rolodex
     @contacts << contact
   end
 
+  def display_contact(contact_id)
+    contact_arr_index = find_contact_index(contact_id)
+    if contact_arr_index != nil
+      current_contact = @contacts[contact_arr_index]
+      current_contact.display_all_values
+    else
+      puts "Contact not found"
+    end
+
+  end
+
+  def display_attribute(attribute_id)
+    print_line
+    case attribute_id
+
+    when 1 #FName
+      puts "Printing all first names:"
+      @contacts.each do |contact|
+        puts "ID #{contact.id}: #{contact.first_name}"
+      end
+
+    when 2 #LName
+      puts "Printing all last names:"
+      @contacts.each do |contact|
+        puts "ID #{contact.id}: #{contact.last_name}"
+      end
+    when 3 #Email
+      puts "Printing all emails:"
+      @contacts.each do |contact|
+        puts "ID #{contact.id}: #{contact.email}"
+      end
+    when 4 #Notes
+      puts "Printing all notes:"
+      @contacts.each do |contact|
+        puts "ID #{contact.id}: #{contact.notes}"
+      end
+    else
+      puts "Invalid entry."
+    end
+    print_line
+  end
+
   def modify_contact(contact_id)
     contact_arr_index = find_contact_index(contact_id)
     current_contact = @contacts[contact_arr_index]
@@ -65,5 +107,10 @@ class Rolodex
 
   def all
     @contacts
+  end
+
+
+  def print_line
+    puts "\n********************\n"
   end
 end
