@@ -9,4 +9,12 @@ class Contact
     @email = email
     @notes = notes
   end
+
+  def display_all_values
+    puts "ID: #{@id}"
+    puts "First Name: #{@first_name}"
+    puts "Last Name: #{@last_name}"
+    puts "Email: #{@email}"
+    puts "Notes: #{@notes}"
+  end
 end

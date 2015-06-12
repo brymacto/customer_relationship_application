@@ -11,6 +11,10 @@ class CRM
   def initialize(name)
     @name = name
     @rolodex = Rolodex.new
+    #Sample contact data
+    @rolodex.add_contact("Bryan", "MacDiarmid", "brymac@gmail.com", "This is me")
+    @rolodex.add_contact("John", "Doe", "jdoe@gmail.com", "This is John")
+    @rolodex.add_contact("John", "Doe", "jdoe@gmail.com", "This is John")
   end
 
   def print_main_menu
@@ -70,15 +74,15 @@ class CRM
   end
 
   def edit_contact
-    puts "in edit cotact"
     answer = "N"
     until answer == "Y" do
       print "Please enter the ID of the contact you wish to edit: "
       current_id = gets.chomp.to_i
       puts "The record you wish to edit is #{current_id}.  Is this correct?  Y or N."
-      answer = gets.chomp
-      @rolodex.edit_contact(current_id) if answer == "Y"
+      answer = gets.chomp.upcase
+
     end
+    @rolodex.modify_contact(current_id) if answer == "Y"
   end
 
   def display_contacts
@@ -89,4 +93,5 @@ class CRM
 end
 
 CRM.run("Bitmaker CRM")
+
 
