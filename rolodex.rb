@@ -28,24 +28,24 @@ class Rolodex
     case field_edit
     when 1
       puts "The first name is currently #{@contacts[contact_arr_index].first_name}"
-      print "Please enter an updated first name: "
+      print "Please enter an updated first name (type no to cancel): "
       first_name_update = gets.chomp
-      current_contact.first_name = first_name_update
+      current_contact.first_name = first_name_update if first_name_update.downcase != "no"
     when 2
       puts "The last name is currently #{@contacts[contact_arr_index].last_name}"
-      print "Please enter an updated last name: "
+      print "Please enter an updated last name (type no to cancel): "
       last_name_update = gets.chomp
-      current_contact.last_name = last_name_update
+      current_contact.last_name = last_name_update if last_name_update.downcase != "no"
     when 3
       puts "The email address is currently #{@contacts[contact_arr_index].email}"
-      print "Please enter an updated email address: "
+      print "Please enter an updated email address (type no to cancel): "
       email_update = gets.chomp
-      current_contact.email = email_update
+      current_contact.email = email_update if email_update.downcase != "no"
     when 4
       puts "The notes are currently #{@contacts[contact_arr_index].notes}"
-      print "Please enter updated notes: "
+      print "Please enter updated notes (type no to cancel): "
       notes_update = gets.chomp
-      current_contact.notes = notes_update
+      current_contact.notes = notes_update if notes_update.downcase != "no"
     when 5
       puts "Cancelling..."
     else
