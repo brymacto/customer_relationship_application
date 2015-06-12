@@ -12,9 +12,9 @@ class CRM
     @name = name
     @rolodex = Rolodex.new
     #Sample contact data
-    @rolodex.add_contact("Bryan", "MacDiarmid", "brymac@gmail.com", "This is me")
-    @rolodex.add_contact("John", "Doe", "jdoe@gmail.com", "This is John")
-    @rolodex.add_contact("John", "Doe", "jdoe@gmail.com", "This is John")
+    @rolodex.add_contact("Britney", "Spears", "bspears@gmail.com", "Oops I did it again.")
+    @rolodex.add_contact("Christina", "Aguilera", "xtina@dirty.com", "Wanna get dirty.")
+    @rolodex.add_contact("Miley", "Cyrcus", "miley@cyrus.com", "I came in like a wrecking ball.")
   end
 
   def print_main_menu
@@ -44,7 +44,7 @@ class CRM
   end
 
   def main_menu
-    puts "Welcome to #{@name}"
+    puts "Welcome to #{@name}.  Some sample data has been added to your CRM."
     while true
       print_main_menu
 
@@ -110,11 +110,19 @@ class CRM
     print_line
   end
 
+  def delete_contact
+    print "Please enter the ID of the contact you wish to delete:"
+    current_id = gets.chomp.to_i
+    @rolodex.delete_contact(current_id)
+    puts "Your contacts are:"
+    display_all_contacts
+  end
+
   def print_line
     puts "\n********************\n"
   end
 end
 
-CRM.run("Bitmaker CRM")
+CRM.run("Bryan's CRM")
 
 

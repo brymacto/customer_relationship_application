@@ -24,6 +24,17 @@ class Rolodex
 
   end
 
+  def delete_contact(contact_id)
+    contact_arr_index = find_contact_index(contact_id)
+    if contact_arr_index != nil
+      @contacts.delete_at(contact_arr_index)
+      puts "Record #{contact_id} has now been deleted."
+    else
+      puts "Contact not found"
+    end
+
+  end
+
   def display_attribute(attribute_id)
     print_line
     case attribute_id
