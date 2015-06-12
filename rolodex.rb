@@ -31,13 +31,21 @@ class Rolodex
       print "Please enter an updated first name: "
       first_name_update = gets.chomp
       current_contact.first_name = first_name_update
-
     when 2
-      puts "Editing last name"
+      puts "The last name is currently #{@contacts[contact_arr_index].last_name}"
+      print "Please enter an updated last name: "
+      last_name_update = gets.chomp
+      current_contact.last_name = last_name_update
     when 3
-      puts "Editing email"
+      puts "The email address is currently #{@contacts[contact_arr_index].email}"
+      print "Please enter an updated email address: "
+      email_update = gets.chomp
+      current_contact.email = email_update
     when 4
-      puts "Editing notes"
+      puts "The notes are currently #{@contacts[contact_arr_index].notes}"
+      print "Please enter updated notes: "
+      notes_update = gets.chomp
+      current_contact.notes = notes_update
     when 5
       puts "Cancelling..."
     else
