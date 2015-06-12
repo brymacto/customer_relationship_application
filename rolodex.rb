@@ -15,33 +15,21 @@ class Rolodex
   end
 
   def modify_contact(id)
-    arr_id = find_contact_index(id)
+    # arr_id = find_contact_index_opt2(id)
+    puts @contacts[find_contact_index(id)].display_all_values
     # puts "find_contact_index(id).id: #{find_contact_index(id).first_name}"
     # puts "Current first name is #{@contacts[find_contact_index(id).id].first_name}"
   end
 
-  def find_contact_index_opt2(id)
-    @contacts.each do |contact|
-      if contact.id.to_i == id.to_i
-        contact.display_all_values
-        puts "Contact: #{@contacts.index("")}"
-        return
-      end
-    end
-    puts "No record found with ID #{id}"
-  end
-
-
   def find_contact_index(id)
-    @contacts.each do |contact|
-      if contact.id.to_i == id.to_i
-        contact.display_all_values
-        puts "Contact: #{@contacts.index("")}"
-        return
-      end
-    end
-    puts "No record found with ID #{id}"
+    @contacts.index { |contact|
+
+      contact.id.to_i == id.to_i
+
+    }
+
   end
+
 
   def all
     @contacts
