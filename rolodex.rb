@@ -14,6 +14,12 @@ class Rolodex
     @contacts << contact
   end
 
+  def edit_contact(id)
+    @contacts.each do |contact|
+
+    end
+  end
+
   def all
     @contacts
   end

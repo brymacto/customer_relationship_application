@@ -70,7 +70,15 @@ class CRM
   end
 
   def edit_contact
-    puts "Editing a contact"
+    puts "in edit cotact"
+    answer = "N"
+    until answer == "Y" do
+      print "Please enter the ID of the contact you wish to edit: "
+      current_id = gets.chomp.to_i
+      puts "The record you wish to edit is #{current_id}.  Is this correct?  Y or N."
+      answer = gets.chomp
+      @rolodex.edit_contact(current_id) if answer == "Y"
+    end
   end
 
   def display_contacts
@@ -81,12 +89,4 @@ class CRM
 end
 
 CRM.run("Bitmaker CRM")
-
-# CRM.run
-
-# bitmaker_crm = CRM.new("Bitmaker CRM")
-# personal_crm = CRM.new("Personal CRM")
-
-# bm_name = bitmaker_crm.name
-# bitmaker_crm.name = "Something new"
 
